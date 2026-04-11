@@ -1,6 +1,7 @@
 const setting = {
-    name: "SΛNSΞKΛI",
-    owner: "6285157729639"
+    name: "TIO GTG ",
+    owner: "6
+        9"
 };
 
 export default setting;
