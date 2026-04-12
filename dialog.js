@@ -1,247 +1,266 @@
-function rand(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+function delay(min = 8000, max = 15000) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const DIALOG = [
+  "Bro pada online gak?",
+  "Online bro",
+  "Ikut nimbrung",
+  "Sama gue juga",
+
+  "Lagi pada ngapain?",
+  "Gue lagi gabut banget",
+  "Sama anjir",
+  "Kosong semua 🤣",
+
+  "Ada ide ngapain?",
+  "Main game?",
+  "Males sih",
+  "Ngobrol aja santai",
+
+  "Iya ngobrol random aja",
+  "Yang penting gak sepi",
+  "Biar gak ngantuk",
+  "Soalnya malam panjang",
+
+  "Ngopi enak sih",
+  "Tapi males bikin",
+  "Wkwk klasik",
+  "Pesen aja lah",
+
+  "Lu kerja besok?",
+  "Masuk bro",
+  "Gue libur",
+  "Enak banget",
+
+  "Weekend kemana?",
+  "Belum tau",
+  "Rebahan aja",
+  "Rebahan club 🤣",
+
+  "Film bagus ada?",
+  "Banyak sih",
+  "Yang santai aja",
+  "Jangan mikir 🤣",
+
+  "Internet lu gimana?",
+  "Lemot banget",
+  "Sama juga",
+  "Provider ampas 🤣",
+
+  "Ngobrol gini seru juga",
+  "Iya santai banget",
+  "Tanpa beban",
+  "Gas terus 😆"
+  
+    // 🎤 MODE KONSER 🔥//
     
-    // delay fleksibel (lebih natural)
-    function humanDelay(text = "") {
-      const base = rand(3000, 9000);
-      const typingTime = text.length * rand(40, 90); // lama ngetik tergantung panjang teks
-      return base + typingTime;
-    }
+  "p konser  🎤🔥",
+  "Woy ini lagi konser apa gimana 😆",
+  "Bass-nya berasa banget 🤣",
+  "Lampu mati, gas musik 🔊",
+  "Teriak dong biar rame 🎶",
+
+  "Crowd mana nih?",
+  "Sorak-sorak dulu 🔥",
+  "Kita bikin vibes konser 😎",
+  "Beat drop lagi 💥",
+  "Jangan sepi, ini konser virtual 🎤",
+
+  "Woy angkat tangan semua 🙌",
+  "Yang diem keluar 🤣",
+  "MC lagi ngomong nih 🎙️",
+  "Lanjut lagu berikutnya 🔥",
+  "Encore! Encore! 🎶",
+  
+    // 🏔️ MODE MUNCAK 🔥
+  "p munca 🏔️🔥",
+  "Siapa yang pernah naik gunung?",
+  "Gue lagi di jalur summit 🥵",
+  "Capek tapi vibes-nya enak",
+  "Udah setengah jalan nih 😆",
+  
+  "Angin di atas kenceng banget 🌬️",
+  "Pemandangan gila sih 😍",
+  "Jangan lupa istirahat dulu",
+  "Minum air dulu bro 💧",
+  "Langitnya bagus banget 🔥",
+  
+  "Masih jauh summit nya?",
+  "Pelan tapi pasti 🏔️",
+  "Kaki udah mulai pegel 🥵",
+  "Tapi gak nyerah 💪",
+  "Gas sampai puncak 🔥",
+  
+  "Foto dulu di puncak 📸",
+  "Ini baru namanya healing 😆",
+  "Sunrise di atas awan 🌄",
+  "Capek tapi puas banget",
+  "Muncak emang terbaik 🏔️"
+  
+  // 🏊 MODE RENANG 🔥
+  "p renang🏊🔥",
+  "Ada yang mau renang bareng?",
+  "Airnya seger banget 😆",
+  "Nyebur dulu gas 🌊",
+  "Jangan lupa pemanasan 🤣",
+  
+  "Kolamnya rame gak nih?",
+  "Gue lagi di tengah kolam 🏊",
+  "Renang santai aja",
+  "Airnya dingin banget 🥶",
+  "Plunggg nyebur 💦",
+  
+  "Gaya bebas dulu 🔥",
+  "Capek tapi enak 😆",
+  "Jangan tenggelam wkwk 🤣",
+  "Ambil nafas dulu 🌬️",
+  "Balapan renang yuk 🏊",
+  
+  "Ombeak kecil enak banget 🌊",
+  "Ini baru healing 😍",
+  "Basah semua gak masalah",
+  "Gas sampai ujung kolam 🔥",
+  "Renang santai sore hari 🏊‍♂️"
+  
+  // 🕺 MODE CLUBBING 🔥
+  "p clubbing bos 🕺🔥",
+  "Gas ke club malam ini 😆",
+  "Bass-nya udah kerasa dari sini 🔊",
+  "Lampu strobo nyala semua 💥",
+  "DJ lagi drop beat 🎧",
+  
+  "Angkat tangan semua 🙌",
+  "Floor lagi rame banget 🔥",
+  "Minum dulu biar santai 🤣",
+  "Jangan duduk mulu bro 🕺",
+  "Ini baru vibes malam 🌙",
+  
+  "DJ ganti lagu 🔁",
+  "Bass nendang banget 💣",
+  "Semua loncat 🔥",
+  "Party sampai pagi 😆",
+  "MC teriak lagi 🎤",
+  
+  "Vibes nya gak ketahan 🔊",
+  "DJ paling gila malam ini 🤯",
+  "Full energy semua 💃",
+  "Jangan pulang dulu 🤣",
+  "Encore lagi gas 🎧"
+  
+    // 💔 MODE PATAH HATI 🔥
+  "p patah hati gaes 💔🔥",
+  "Gue kira kita bakal lama… ternyata gak 😔",
+  "Kamu pergi tanpa banyak kata 🤍",
+  "Gue masih nunggu chat kamu, padahal gak akan datang 😆",
+  "Lucu ya, dulu tiap hari chat sekarang asing 🤣",
+  
+  "Gue kangen, tapi gak bisa bilang 😔",
+  "Kamu udah jadi cerita yang selesai 🤍",
+  "Ternyata gue cuma sementara di hidup kamu 😆",
+  "Sedihnya diam-diam aja 🤣",
+  "Padahal gue masih sayang banget 😔",
+  
+  "Kenapa harus kayak gini sih 🤍",
+  "Gue belajar buat biasa tanpa kamu 😆",
+  "Tapi gak gampang ternyata 🤣",
+  "Semua jadi sepi lagi 😔",
+  "Chat terakhir masih gue simpen 🤍",
+  
+  "Gue harus nerima walaupun sakit 😆",
+  "Kadang kangen itu gak ada obatnya 🤍",
+  "Udah ah, capek sendiri 😔",
+  "Tapi gue masih senyum kok 🤣",
+  "Walaupun hati gak baik-baik aja 💔"
+  
+  // 💔 MODE BUCIN BERAT 🔥
+  "p bucin berat girl 💔🔥",
+  "Gue gak tau ya, tapi gue kepikiran kamu terus 😔",
+  "Kenapa sih kamu selalu ada di kepala gue 🤍",
+  "Chat kamu itu bikin gue tenang 😆",
+  "Tapi kalau kamu lama bales, gue jadi kepikiran 🤣",
+  
+  "Gue gak butuh yang lain, cukup kamu aja 😳",
+  "Walaupun kamu cuek, gue tetep stay 😔",
+  "Gue gak tau ini baper atau emang sayang 🤍",
+  "Kalau kamu hilang, gue bingung 😆",
+  "Jangan pergi ya, walau cuma chat 🤣",
+  
+  "Gue sadar, gue terlalu mikirin kamu 😔",
+  "Tapi susah buat gak peduli 🤍",
+  "Kamu tuh udah kebiasaan di hati gue 😳",
+  "Kalau kamu ketawa, gue ikut seneng 😆",
+  "Kalau kamu sedih, gue juga down 🤣",
+  
+  "Udah ah, gue keliatan bucin banget 😔",
+  "Tapi emang iya sih 🤍",
+  "Jangan ilang ya, serius 😳",
+  "Gue di sini aja cukup 😆",
+  "Selama kamu ada, gue santai 🤍"
+  
+  // 💖 MODE PAMER PACAR 🔥
+  "p pamer paca dong💖🔥",
+  "Gue punya pacar wkwk 😆",
+  "Pacar gue lagi sibuk katanya 🤣",
+  "Dia tuh perhatian banget sih 😍",
+  "Lagi chat sama dia nih 💬",
+  
+  "Siapa yang belum punya pacar? 🤣",
+  "Gue sih santai aja, udah ada 😎",
+  "Dia selalu bawelin gue wkwk 💖",
+  "Kalau dia marah serem juga 😆",
+  "Tapi gemes sih 🤣",
+  
+  "Dia paling gak suka gue begadang 😴",
+  "Tapi gue masih nongkrong sini wkwk",
+  "Pacar gue tipe yang perhatian 🔥",
+  "Kadang receh juga orangnya 😆",
+  "Yang penting dia ada 💖",
+  
+  "Jangan pada baper ya 🤣",
+  "Gue cuma pamer dikit wkwk",
+  "Dia lagi off dulu 😆",
+  "Nanti gue kasih tau dia 🔥",
+  "Udah ah malu-maluin 🤣"
+  
+  
     
-    // gaya tiap bot
-    const STYLES = [
-      { name: "santai", suffix: ["", " 😆", " wkwk", " sih"], typo: 0.2 },
-      { name: "toxic", suffix: [" 😏", " lah", " bego", " njir"], typo: 0.3 },
-      { name: "kalem", suffix: ["", " sih", " ya", " mungkin"], typo: 0.1 },
-      { name: "random", suffix: [" 😂", " 😭", " 😅", ""], typo: 0.25 }
-    ];
-    
-    // dialog base (pakai punyamu yang panjang)
-    const DIALOG = [
-      "Eh lagi apa nih?",
-      "Nongkrong aja 😆",
-      "Gabut banget sih",
-      "Sama, kosong total",
-      
-      "Mau ngapain hari ini?",
-      "Belum tau",
-      "Cari hiburan aja",
-      "Iya biar gak bosan",
-      
-      "Main game yuk",
-      "Gas",
-      "Game apa?",
-      "Yang santai aja",
-      
-      "Free Fire?",
-      "Boleh",
-      "Aku ikut",
-      "Gas main",
-      
-      "Siapa jago?",
-      "Aku dikit 😎",
-      "Hahaha bohong",
-      "Aku masih belajar",
-      
-      "Wkwk ngakak",
-      "Santai aja",
-      "Seru juga",
-      "Lanjut terus",
-      
-      "Laper gak?",
-      "Lumayan",
-      "Iya nih",
-      "Makan yuk",
-      
-      "Makan apa?",
-      "Indomie aja",
-      "Setuju",
-      "Tambah telur",
-      
-      "Siapa masak?",
-      "Aku gak mau 😂",
-      "Jangan aku",
-      "Giliran random",
-      
-      "Wkwk kacau",
-      "Biasa aja",
-      "Yang penting kenyang",
-      "Setuju",
-      
-      "Abis ini?",
-      "Tidur mungkin",
-      "Scroll HP",
-      "Nonton YouTube",
-      
-      "Capek gak?",
-      "Lumayan",
-      "Iya juga",
-      "Rebahan aja",
-      
-      "Besok ngapain?",
-      "Kerja/sekolah",
-      "Rutinitas lagi",
-      "Semangat",
-      
-      "Udah mandi?",
-      "Belum 😆",
-      "Buruan",
-      "Nanti aja",
-      
-      "Malam ngapain?",
-      "Tidur",
-      "Main HP",
-      "Nonton film",
-      
-      "Film apa?",
-      "Action",
-      "Komedi",
-      "Terserah",
-      
-      "Bosen ya?",
-      "Iya sedikit",
-      "Chat aja",
-      "Biar rame",
-      
-      "Kenapa diam?",
-      "Lagi mikir",
-      "Mikir apa?",
-      "Hidup 😆",
-      
-      "Lucu kamu",
-      "Apanya?",
-      "Kelakuan kamu",
-      "Wkwk",
-      
-      "Stres gimana?",
-      "Rebahan",
-      "Denger musik",
-      "Main HP",
-      
-      "Musik apa?",
-      "Lo-fi",
-      "Santai",
-      "Biar tenang",
-      
-      "Besok ketemu?",
-      "Harus",
-      "Insyaallah",
-      "Gas",
-      
-      "Oke kalau gitu",
-      "Bye",
-      "Dadah",
-      "Sampai jumpa",
-      
-      "Jangan begadang",
-      "Iya siap",
-      "Oke noted",
-      "Siap"
-      
-      ];
-    
-    // shuffle
-    function shuffle(arr) {
-      return arr.sort(() => Math.random() - 0.5);
-    }
-    
-    let pool = shuffle([...DIALOG]);
-    
-    function getNextDialog() {
-      if (pool.length === 0) pool = shuffle([...DIALOG]);
-      return pool.shift();
-    }
-    
-    // bikin typo ringan
-    function typoText(text) {
-      if (text.length < 4) return text;
-    
-      const i = rand(0, text.length - 2);
-      return text.slice(0, i) + text[i + 1] + text[i] + text.slice(i + 2);
-    }
-    
-    // apply style
-    function applyStyle(text, style) {
-      let t = text;
-    
-      // typo kemungkinan
-      if (Math.random() < style.typo) {
-        t = typoText(t);
-    
-        // kadang langsung benerin
-        if (Math.random() < 0.5) {
-          return [t, text];
-        }
+  ];
+
+export async function startCallChat(group, bots, callerBot) {
+
+  let lastMsg = null;
+
+  let activeBots = bots.filter(b => b?.user);
+
+  if (activeBots.length < 3) return;
+
+  // caller di depan
+  activeBots = [
+    callerBot,
+    ...activeBots.filter(b => b !== callerBot)
+  ];
+
+  for (let i = 0; i < DIALOG.length; i++) {
+
+    const d = i === 0 ? 3000 : delay();
+    await new Promise(r => setTimeout(r, d));
+
+    try {
+      const bot = activeBots[i % activeBots.length];
+
+      if (!bot?.user) continue;
+
+      const msg = await bot.sendMessage(
+        group,
+        { text: DIALOG[i] },
+        lastMsg ? { quoted: lastMsg } : {}
+      );
+
+      lastMsg = msg;
+
+    } catch (e) {
+        console.log("❌ error:", e.message);
       }
-    
-      // tambah suffix
-      const suf = style.suffix[rand(0, style.suffix.length - 1)];
-      return [t + suf];
-    }
-    
-    // mapping bot ke style
-    const botStyles = new Map();
-    
-    function getBotStyle(bot) {
-      if (!botStyles.has(bot)) {
-        botStyles.set(bot, STYLES[rand(0, STYLES.length - 1)]);
-      }
-      return botStyles.get(bot);
-    }
-    
-    // MAIN
-    export async function startCallChat(group, bots, callerBot) {
-    
-      let lastMsg = null;
-    
-      let activeBots = bots.filter(b => b?.user);
-      if (activeBots.length < 3) return;
-    
-      activeBots = [callerBot, ...activeBots.filter(b => b !== callerBot)];
-    
-      // delay awal random (biar gak langsung nyaut)
-      await new Promise(r => setTimeout(r, rand(3000, 8000)));
-    
-      while (global.activeGroups[group]) {
-    
-        // 20% kemungkinan diem (ghosting)
-        if (Math.random() < 0.2) {
-          await new Promise(r => setTimeout(r, rand(5000, 15000)));
-          continue;
-        }
-    
-        try {
-          const bot = activeBots[rand(0, activeBots.length - 1)];
-          if (!bot?.user) continue;
-    
-          const style = getBotStyle(bot);
-          const baseText = getNextDialog();
-          const messages = applyStyle(baseText, style);
-    
-          for (let m of messages) {
-    
-            // typing effect
-            await bot.sendPresenceUpdate('composing', group);
-    
-            await new Promise(r => setTimeout(r, humanDelay(m)));
-    
-            const msg = await bot.sendMessage(
-              group,
-              { text: m },
-              lastMsg ? { quoted: lastMsg } : {}
-            );
-    
-            lastMsg = msg;
-    
-            // jeda kecil antar pesan (kalau typo + koreksi)
-            await new Promise(r => setTimeout(r, rand(1000, 3000)));
-          }
-    
-        } catch (e) {
-          console.log("❌ error:", e.message);
-        }
-      }
-    
-      console.log("🛑 berhenti:", group);
-    }
+  }
+}
