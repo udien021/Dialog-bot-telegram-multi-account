@@ -92,7 +92,7 @@ async function startBot(sessionName) {
     // ======================
     if (from.endsWith("@g.us") && text?.toLowerCase() === ".absen") {
 
-      const names = ["Andi","Budi","Rizky","Dika","Fajar","Rian"];
+      const names = ["Siskaee","Fikae","Neng Gina","Dek Serly","Mbak Divha","Casterina"];
 
       activeBots.forEach((bot, i) => {
         setTimeout(() => {
