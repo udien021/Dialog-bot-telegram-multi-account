@@ -51,7 +51,7 @@ const DIALOG = [
   "Ngobrol gini seru juga",
   "Iya santai banget",
   "Tanpa beban",
-  "Gas terus 😆"
+  "Gas terus 😆",
   
     // 🎤 MODE KONSER 🔥//
     
@@ -96,7 +96,7 @@ const DIALOG = [
   "Ini baru namanya healing 😆",
   "Sunrise di atas awan 🌄",
   "Capek tapi puas banget",
-  "Muncak emang terbaik 🏔️"
+  "Muncak emang terbaik 🏔️",
   
   // 🏊 MODE RENANG 🔥
   "p renang🏊🔥",
@@ -121,7 +121,7 @@ const DIALOG = [
   "Ini baru healing 😍",
   "Basah semua gak masalah",
   "Gas sampai ujung kolam 🔥",
-  "Renang santai sore hari 🏊‍♂️"
+  "Renang santai sore hari 🏊‍♂️",
   
   // 🕺 MODE CLUBBING 🔥
   "p clubbing bos 🕺🔥",
@@ -146,7 +146,7 @@ const DIALOG = [
   "DJ paling gila malam ini 🤯",
   "Full energy semua 💃",
   "Jangan pulang dulu 🤣",
-  "Encore lagi gas 🎧"
+  "Encore lagi gas 🎧",
   
     // 💔 MODE PATAH HATI 🔥
   "p patah hati gaes 💔🔥",
@@ -171,7 +171,7 @@ const DIALOG = [
   "Kadang kangen itu gak ada obatnya 🤍",
   "Udah ah, capek sendiri 😔",
   "Tapi gue masih senyum kok 🤣",
-  "Walaupun hati gak baik-baik aja 💔"
+  "Walaupun hati gak baik-baik aja 💔",
   
   // 💔 MODE BUCIN BERAT 🔥
   "p bucin berat girl 💔🔥",
@@ -196,7 +196,7 @@ const DIALOG = [
   "Tapi emang iya sih 🤍",
   "Jangan ilang ya, serius 😳",
   "Gue di sini aja cukup 😆",
-  "Selama kamu ada, gue santai 🤍"
+  "Selama kamu ada, gue santai 🤍",
   
   // 💖 MODE PAMER PACAR 🔥
   "p pamer paca dong💖🔥",
@@ -221,11 +221,8 @@ const DIALOG = [
   "Gue cuma pamer dikit wkwk",
   "Dia lagi off dulu 😆",
   "Nanti gue kasih tau dia 🔥",
-  "Udah ah malu-maluin 🤣"
-  
-  
-    
-  ];
+  "Udah ah malu-maluin 🤣",
+   ];
 
 export async function startCallChat(group, bots, callerBot) {
 
